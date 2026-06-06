@@ -7,64 +7,33 @@ body {
   background-color: #fff;
   font-size: 13pt;
 }
-div#TOC ul {
-  list-style: none;
+
+ul {
+  padding-block: 0;
+  margin-block: 0;
 }
-div.license {
-  margin-top: 1em;
-  font-style: italic;
-  font-size: 80%;
-}
+
 h1 {
   font-size: 140%;
   font-weight: bold;
   padding-top: 0.5em;
 }
+
 h2 {
   font-size: 120%;
   font-weight: bold;
 }
+
 h3 {
   font-size: 110%;
   font-weight: bold;
 }
+
 h4 {
   font-size: 100%;
   font-weight: bold;
 }
-a.definition {
-  font-weight: bold;
-}
-a.toc-link {
-  float: right;
-  color: #ddd;
-  text-decoration: none;
-  font-weight: normal;
-}
-a.toc-link::after {
-  content: "\25B2";
-}
-a.toc-link:hover {
-  color: #000;
-}
-span.space {
-  position: relative;
-}
-span.number:after {
-  content: "  ";
-}
-span.space:after {
-  content: "·";
-  position: absolute;
-  top: 0px;
-  bottom: 7px;
-  left: 1px;
-  right: 1px;
-  color: #aaa;
-}
-div.example {
-  overflow: hidden;
-}
+
 p {
   text-align: justify;
 }
@@ -89,92 +58,4 @@ code {
 }
 pre > code {
   background-color: transparent;
-}
-.example {
-  font-size: 0;
-  padding-bottom: 6pt;
-}
-.column pre {
-  font-size: 11pt;
-  padding-left: 6pt;
-  padding-right: 6pt;
-  padding-top: 2pt;
-  padding-bottom: 2pt;
-}
-div.examplenum {
-  font-size: 11pt;
-  text-align: left;
-  margin-bottom: 10px;
-}
-div.column {
-  display: inline-block;
-  width: 50%;
-  vertical-align: top;
-}
-.extension {
-  background: #e0f0e0;
-}
-div.example > div:nth-child(2) {
-  clear: left;
-  background-color: #d3e1e4;
-}
-div.example > div:nth-child(3) {
-  clear: right;
-  background-color: #c9cace;
-}
-#watermark {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  padding: 1em;
-  width: 100%;
-  font-size: 120%;
-  opacity: 0.7;
-  z-index: 99;
-  color: white;
-}
-#watermark a {
-  color: white;
-}
-a.dingus {
-  margin-left: 1em;
-  cursor: pointer;
-  line-height: 30px;
-  padding: 4px 7px;
-  color: #fff;
-  background-color: #33c3f0;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-color: #4fcaef;
-  border-bottom: 2px #2a9ec1 solid;
-  border-right: 2px #2a9ec1 solid;
-}
-a.footnoteRef > sup:before {
-  content: "[";
-}
-a.footnoteRef > sup:after {
-  content: "]";
-}
-a.footnoteRef > sup {
-  vertical-align: baseline;
-  font-size: 100%;
-}
-@media print {
-  @page {
-    size: auto;
-    margin: 1.2in 1.2in 1.2in 1.2in;
-  }
-  body {
-    margin: 0px;
-    line-height: 1.2;
-    font-size: 10pt;
-  }
-  .column pre {
-    font-size: 9pt;
-  }
-  div.examplenum {
-    font-size: 9pt;
-  }
-  a.dingus {
-    display: none;
-  }
 }

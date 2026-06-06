@@ -1,0 +1,25 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("projects");
+  return posts.map((post: { id: any }) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"projects">;
+
+const post = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+---
+
+<p>
+  <time datetime={post.data.pubDate.toString()}>
+    {post.data.pubDate.toLocaleDateString("en-GB")}
+  </time> | {remarkPluginFrontmatter.minutesRead} -{" "}
+  <a href={`/projects/tags/${post.data?.tags?.join(", ")}`}>
+    {post.data?.tags?.join(", ")}
+  </a>
+</p>
+<Content />
