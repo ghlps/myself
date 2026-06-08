@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
+import Base from "../../layouts/base.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -14,12 +15,14 @@ const post = Astro.props;
 const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
-<p>
-  <time datetime={post.data.pubDate.toString()}>
-    {post.data.pubDate.toLocaleDateString("en-GB")}
-  </time> | {remarkPluginFrontmatter.minutesRead} -{" "}
-  <a href={`/blog/tags/${post.data?.tags?.join(", ")}`}>
-    {post.data?.tags?.join(", ")}
-  </a>
-</p>
-<Content />
+<Base>
+  <p>
+    <time datetime={post.data.pubDate.toString()}>
+      {post.data.pubDate.toLocaleDateString("en-GB")}
+    </time> | {remarkPluginFrontmatter.minutesRead} -{" "}
+    <a href={`/blog/tags/${post.data?.tags?.join(", ")}`}>
+      {post.data?.tags?.join(", ")}
+    </a>
+  </p>
+  <Content />
+</Base>

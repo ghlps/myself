@@ -1,11 +1,17 @@
+:root {
+  --font-sans: "Geist Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
 body {
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.4;
   max-width: 48em;
   margin: auto;
   color: #333333;
   background-color: #fff;
   font-size: 13pt;
+  padding-inline: 1rem;
 }
 
 ul {
@@ -37,6 +43,7 @@ h4 {
 p {
   text-align: justify;
 }
+
 pre {
   padding: 0.5em;
   margin-left: 0;
@@ -45,6 +52,7 @@ pre {
   margin-bottom: 0.5em;
   font-size: 88%;
 }
+
 pre {
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
@@ -52,10 +60,12 @@ pre {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
+
 code {
   font-family: monospace;
   background-color: #d3e1e4;
 }
+
 pre > code {
   background-color: transparent;
 }

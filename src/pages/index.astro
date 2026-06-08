@@ -1,4 +1,6 @@
 ---
+import Base from "../layouts/base.astro";
+
 const posts = import.meta.glob("../content/blog/*.md", { eager: true });
 const project = import.meta.glob("../content/projects/*.md", { eager: true });
 
@@ -37,58 +39,47 @@ const projects = Object.entries(project)
   .slice(0, 3);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../src/styles.css" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Guilherme Lopes - Software Developer</title>
-  </head>
-  <body>
-    <main>
-      <h1>Guilherme Lopes</h1>
-      <p>
-        Software developer capable of working on anything that is related to
-        programming world. Interested about anything that is related to web
-        (CI/CD, Docker, databases, frontend, backend and cool stuff). Passionate
-        about the world web wide and its aspects.
-      </p>
-      <p>
-        You can find me on <a
-          href="https://github.com/guimox"
-          target="_blank"
-          rel="noopener noreferrer">GitHub</a
-        > and <a
-          href="https://www.linkedin.com/in/guimox/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn</a
-        >.
-      </p>
-      <h3>Articles about things</h3>
-      <ul>
-        {
-          articles.map((article) => (
-            <li>
-              <a href={article.url}>{article.frontmatter.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-      <h3>Projects that I'm proud of</h3>
-      <ul>
-        {
-          projects.map((article) => (
-            <li>
-              <a href={article.url}>{article.frontmatter.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-  </body>
-</html>
+<Base>
+  <main>
+    <h1>Guilherme Lopes</h1>
+    <p>
+      Software developer capable of working on anything that is related to
+      programming world. Interested about anything that is related to web
+      (CI/CD, Docker, databases, frontend, backend and cool stuff). Passionate
+      about the world web wide and its aspects.
+    </p>
+    <p>
+      You can find me on <a
+        href="https://github.com/guimox"
+        target="_blank"
+        rel="noopener noreferrer">GitHub</a
+      > and <a
+        href="https://www.linkedin.com/in/guimox/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn</a
+      >.
+    </p>
+    <h3>Articles about things</h3>
+    <ul>
+      {
+        articles.map((article) => (
+          <li>
+            <a href={article.url}>{article.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <h3>Projects that I'm proud of</h3>
+    <ul>
+      {
+        projects.map((article) => (
+          <li>
+            <a href={article.url}>{article.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
